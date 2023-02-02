@@ -370,9 +370,10 @@ fn add_common(ctx: &mut Context) {
             flags.push("/Z7");
         }
 
-        if ccenv.mode.as_str() == "profile" {
-            flags.push("/O2");
-        }
+        //if ccenv.mode.as_str() == "profile" {
+        //    flags.push("/O2");
+        //}
+        flags.push("/O2");
 
         flags.push("/std:c++14");
 
