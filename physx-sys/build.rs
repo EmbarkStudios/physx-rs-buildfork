@@ -333,6 +333,8 @@ fn add_common(ctx: &mut Context) {
         builder.compiler("clang++");
     }
 
+    // ??? PF: Temp
+    /*
     let flags = if builder.get_compiler().is_like_clang() {
         vec![
             "-std=c++14",
@@ -350,7 +352,9 @@ fn add_common(ctx: &mut Context) {
             "-Wstrict-aliasing=2",
             "-w",
         ]
-    } else if builder.get_compiler().is_like_msvc() {
+    } else if builder.get_compiler().is_like_msvc() 
+    */
+    let flags = {
         // Disable defaults since we disagree with cc in some cases, this
         // means we have to manually set eg profile and debug flags that
         // would normally be set by default
@@ -389,9 +393,12 @@ fn add_common(ctx: &mut Context) {
         );
 
         flags
-    } else {
+    };
+    /*
+    else {
         vec![]
     };
+    */
 
     for flag in flags {
         builder.flag(flag);
